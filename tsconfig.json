@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "isolatedModules": false,
+      "experimentalDecorators": true,
+      "jsxImportSource": "preact",
+      "lib": ["es5", "es2016", "dom"]
+    }
+  }

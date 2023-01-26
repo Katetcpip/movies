@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.backr-image {
+    background-image: linear-gradient( rgba(0.4, 0, 0, 0.495), rgba(70, 34, 70, 0.453)), url(https://laptopstalk.com/wp-content/uploads/2020/04/apps.55787.9007199266246365.687a10a8-4c4a-4a47-8ec5-a95f70d8852d.jpg);
+    min-height: 100vh;
+    width: 100%;
+    background-position: 1% 15%;
+}
+
+.header-font {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 500;
+    color: rgb(235, 232, 232);
+    font-size: 58px;
+    line-height: 1.2;
+}
+
+.header-font2 {
+    color: rgb(235, 232, 232);
+    font-size: 44px;
+    line-height: 1.2;
+}
+
+@media(max-width: 600px) {
+    .header-font2 {
+        font-size: 24px;
+        color: rgb(235, 232, 232);
+    }
+}
+
+.descr-font {
+    font-weight: 400;
+    color: rgba(255, 249, 249, 0.83);
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.button {
+    font-weight: 600;
+    color: rgb(235, 232, 232);
+    font-size: 20px;
+    padding: 15px 50px;
+    border-radius: 52px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a8f4ec, #ee329c, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    z-index: 1;
+}
+
+.button:hover {
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.button:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+
+.main {
+    /* min-height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0) */
+    background-image: linear-gradient( rgba(60, 60, 60, 0.777), rgba(70, 34, 70, 0.264)), url(https://laptopstalk.com/wp-content/uploads/2020/04/apps.55787.9007199266246365.687a10a8-4c4a-4a47-8ec5-a95f70d8852d.jpg);
+    min-height: 100vh;
+    width: 100%;
+    background-position: 1% 15%;
+}
+
+.imgH {
+    height: 280px;
+    width: 220px;
+}
+
+.width2 {
+    width: 220px;
+    min-height: max-content;
+    transition: transform 0.35s;
+}
+
+.width2:hover {
+    transform: scale(1.1);
+}
+
+.hText {
+    height: calc(388px - 280px);
+}
+
+.sliding-button {
+    text-decoration: none;
+    color: rgb(141, 141, 141);
+    display: inline-block;
+    position: relative;
+    padding: 5px 10px;
+    border-top: 1px solid;
+    border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    border-image-slice: 1;
+    margin: 5px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: 1.2s;
+}
+
+.sliding-button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    transition: 0.8s;
+}
+
+.sliding-button:hover {
+    background: rgba(255, 255, 255, 0);
+}
+
+.sliding-button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+    content: "";
+}
+
+
+/* модальное окно */
+
+.modal {
+    display: none;
+    position: fixed;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fffafa;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #c5a87f;
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.close {
+    position: fixed;
+    top: 12px;
+    right: 20px;
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 2px 16px;
+}
+
+.border {
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid #6e6e6e;
+}
+
+textarea {
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    height: 100px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+.red-txt {
+    padding: 5px;
+    font-weight: 600;
+    color: rgb(142, 11, 0);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+}
