@@ -240,3 +240,7 @@ textarea {
     color: rgb(142, 11, 0);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
 }
+
+input {
+    -webkit-appearance: none;
+}

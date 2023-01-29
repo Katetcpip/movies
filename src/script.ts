@@ -140,7 +140,8 @@ function renderMore(data2:any):void{
        </div>
        </div>   </div>
      
-    <p class="flex mt-4 mb-4 border p-2 bg-lime-50 border-solid border-1 border-black">Plot ${data2.Plot}</p>
+    <p class="flex mt-4 mb-4 border p-2 bg-lime-50 border-solid border-1 border-black">
+    ${data2.Plot  !== "N/A" ? data2.Plot : "Plot is not available"}</p>
    <div class="flex flex-row mt-1 mb-2"> 
    <img class="h-5 w-5" src="https://free-png.ru/wp-content/uploads/2021/12/free-png.ru-80-340x340.png">
     <p class="pl-1">${data2.Language}, ${data2.Country}</p></div>
@@ -148,7 +149,7 @@ function renderMore(data2:any):void{
     <img class="h-5 w-5 mt-2" src="https://cdn-icons-png.flaticon.com/512/70/70548.png">
     <p class="pl-1">Awards: ${data2.Awards !== "N/A" ? data2.Awards : "no awards yet"}</p></div>
 
-       <div class="pl-1 border-l-2 border-solid border-yellow-500 p-2">Ratings:  ${JSON.stringify(data2.Ratings).replace(/[\{\}/[\]/"/s]/g, '')}</div>
+       <div class="flex overflow-auto pl-1 border-l-2 border-solid border-yellow-500 p-2">Ratings:  ${!data2.Ratings ? JSON.stringify(data2.Ratings).replace(/[\{\}/[\]/"/s]/g, '') : " - "}</div>
   <div class="flex flex-col text-start"> 
    <div class="pl-1 border-l-2 border-solid border-indigo-500 p-2">Metascore ${data2.Metascore !== "N/A" ? data2.Metascore : "0"}</div>
     <div class=" pl-1 border-l-2 border-solid border-indigo-500 p-2">imdbRating ${data2.imdbRating !== "N/A" ? data2.imdbRating : "0"}</div>
